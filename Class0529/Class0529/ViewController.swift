@@ -8,35 +8,38 @@
 
 import UIKit
 
-var count = 0
+
 
 class FirstViewController: UIViewController  {
-    
-    var pushButton = UIButton(frame: CGRect(x: 100, y: 100, width: 100, height: 50))
-    var countButton = UIButton(frame: CGRect(x: 100, y: 300, width: 100, height: 50))
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        pushButton.setTitle("click", for: .normal)
-        pushButton.addTarget(self, action: #selector(clicked), for: .touchUpInside)
-        pushButton.backgroundColor = UIColor.black
-        view.addSubview(pushButton)
+        //x,y가 0.0에서부터의 위치 width, height가 가로세로변
+        print(view.frame.maxY)
+        let blueView = UIView(frame: CGRect(x: 15,
+                                            y: 15,
+                                            width: view.frame.width - 30,
+                                            height: 200))
         
-        countButton.backgroundColor = UIColor.black
-        countButton.setTitle("will count", for: .normal)
-        view.addSubview(countButton)
+        let redView = UIView(frame: CGRect(x: 15,
+                                           y: view.frame.height - 15 - 200,
+                                           width: view.frame.width - 30,
+                                           height: 200))
         
+        blueView.backgroundColor = UIColor.blue
+        redView.backgroundColor = UIColor.red
+        view.addSubview(blueView)
+        view.addSubview(redView)
+
+    
     }
 
-    @objc func clicked() {
-        print("====push button====")
-        count += 1
-        countButton.setTitle("\(count)", for: .normal)
-        
-    }
-
+    
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  Class0529
+//  Class0529(1)
 //
 //  Created by kimdaeman14 on 2018. 5. 29..
 //  Copyright © 2018년 kimdaeman14. All rights reserved.
@@ -16,12 +16,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-       
-        let window = UIWindow(frame : UIScreen.main.bounds)
-        window.rootViewController = FirstViewController()
-        window.backgroundColor=UIColor.white
-        window.makeKeyAndVisible()
-        self.window=window
+        
+        
+//        let window = UIWindow(frame : UIScreen.main.bounds)
+//        window.rootViewController = ViewController()
+//        window.backgroundColor=UIColor.white
+//        window.makeKeyAndVisible()
+//        self.window=window
+        
+        
+        
         
         return true
     }
