@@ -36,37 +36,89 @@ class ViewController: UIViewController {
     var test = UIButton(frame: CGRect(x: 240, y: 470, width: 70, height: 70))
     
     
-    
-
+    var arr: Array<Int> = []
     var total: String = ""
-    var count = 0
+    var input : String = ""
+    var firstnumber = 0
+    var secondnumber = 0
+    var resultnumber = 0
     
-    @objc func write(_ button: UIButton){
-        label.text = "\(button.currentTitle!)"
-        let input = label.text
-        for _ in input! {
-            total += input!
+    
+    
+    @objc func write(number : UIButton){
+        label.text = number.currentTitle
+      
+        input = label.text!
+        
+        for _ in input {
+            total += input
         }
-        showCount()
+        printarr()
     }
     
-    @objc func showCount(){
-        print("show total \(total)")
+    //이버튼을 누르면 문자열값 total이 map을 통해서 int로바뀌고 하나의 변수에 저장되도록하는 함수
+    
+    @objc func mapmap(){
+    
+    var arr = total.components(separatedBy: " ").map({ (value : String) -> Int in return Int(value)! })
+    
+        
+        firstnumber = arr[0]
+        
+    total = ""
+    print("인트로변환된값 \(arr[0])")
+        
+    
+    }
+    
+    //이버튼을 누르면 다시 시작된 토탈이 인트형으로 변환이되서 secondnumber에 들어가고
+    //firstnumber   secondnumber가 연산을 하고
+    //결과값이 다시firstnumber로 바껴야해 .
+    @objc func mapmap2(){
+        
+        var arr = total.components(separatedBy: " ").map({ (value : String) -> Int in return Int(value)! })
+        
+        
+        secondnumber = arr[0]
+        
+        print("두번째변환된값 \(arr[0])")
+
+        
+        calcullater()
     }
     
     
-    @objc func countAdd(){
-        button.setTitle("clicked", for: .highlighted)
-        count += 1
-        countButton.setTitle("\(count)", for: .normal)
+    @objc func calcullater(){
+       resultnumber = firstnumber + secondnumber
+       label.text = "결과값은 \(resultnumber)입니다."
+        firstnumber = resultnumber
+        
     }
     
-    @objc func reset(){
-        button.setTitle("click", for: .normal)
-        button.backgroundColor = .black
-        count = 0
-        countButton.setTitle("0", for: .normal)
+    /*
+    @objc func write1(){ label.text = "\(1)"; arr.append(1); printarr()}
+    @objc func write2(){ label.text = "\(2)"; arr.append(2); printarr()}
+    @objc func write3(){ label.text = "\(3)"; arr.append(3); printarr()}
+    @objc func write4(){ label.text = "\(4)"; arr.append(4); printarr()}
+    @objc func write5(){ label.text = "\(5)"; arr.append(5); printarr()}
+    @objc func write6(){ label.text = "\(6)"; arr.append(6); printarr()}
+    @objc func write7(){ label.text = "\(7)"; arr.append(7); printarr()}
+    @objc func write8(){ label.text = "\(8)"; arr.append(8); printarr()}
+    @objc func write9(){ label.text = "\(9)"; arr.append(9); printarr()}
+    @objc func write0(){ label.text = "\(0)"; arr.append(0); printarr()}
+    */
+  
+    
+    
+    @objc func printarr(){
+        print("토탈값: \(total)")
+
     }
+    
+    
+    
+    
+ 
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,14 +132,14 @@ class ViewController: UIViewController {
         
         num1.setTitle("1", for: .normal)
         num2.setTitle("2", for: .normal)
-        num3.setTitle("3", for: .normal)
+        num3.setTitle("+", for: .normal)
         num4.setTitle("4", for: .normal)
         num5.setTitle("5", for: .normal)
         num6.setTitle("6", for: .normal)
         num7.setTitle("7", for: .normal)
         num8.setTitle("8", for: .normal)
         num9.setTitle("9", for: .normal)
-        num0.setTitle("0", for: .normal)
+        num0.setTitle("=", for: .normal)
 
     
         button.setTitle("click", for: .normal)
@@ -146,29 +198,36 @@ class ViewController: UIViewController {
         
         
         
-        plus.addTarget(self, action: #selector(write(_:)), for: .touchUpInside)
-        minus.addTarget(self, action: #selector(write(_:)), for: .touchUpInside)
-        multiple.addTarget(self, action: #selector(write(_:)), for: .touchUpInside)
-        divide.addTarget(self, action: #selector(write(_:)), for: .touchUpInside)
-        num1.addTarget(self, action: #selector(write(_:)), for: .touchUpInside)
-        num2.addTarget(self, action: #selector(write(_:)), for: .touchUpInside)
-        num3.addTarget(self, action: #selector(write(_:)), for: .touchUpInside)
-        num4.addTarget(self, action: #selector(write(_:)), for: .touchUpInside)
-        num5.addTarget(self, action: #selector(write(_:)), for: .touchUpInside)
-        num6.addTarget(self, action: #selector(write(_:)), for: .touchUpInside)
-        num7.addTarget(self, action: #selector(write(_:)), for: .touchUpInside)
-        num8.addTarget(self, action: #selector(write(_:)), for: .touchUpInside)
-        num9.addTarget(self, action: #selector(write(_:)), for: .touchUpInside)
-        num0.addTarget(self, action: #selector(write(_:)), for: .touchUpInside)
-        button.addTarget(self, action: #selector(write(_:)), for: .touchUpInside)
-        countButton.addTarget(self, action: #selector(write(_:)), for: .touchUpInside)
-        resetButton.addTarget(self, action: #selector(write(_:)), for: .touchUpInside)
-        test.addTarget(self, action: #selector(write(_:)), for: .touchUpInside)
+        plus.addTarget(self, action: #selector(write), for: .touchUpInside)
+        minus.addTarget(self, action: #selector(write), for: .touchUpInside)
+        multiple.addTarget(self, action: #selector(write), for: .touchUpInside)
+        divide.addTarget(self, action: #selector(write), for: .touchUpInside)
+        
+        
+        num1.addTarget(self, action: #selector(write), for: .touchUpInside)
+        num2.addTarget(self, action: #selector(write), for: .touchUpInside)
+        num3.addTarget(self, action: #selector(mapmap), for: .touchUpInside)
+        num0.addTarget(self, action: #selector(mapmap2), for: .touchUpInside)
+
+        /*
+        num4.addTarget(self, action: #selector(write4), for: .touchUpInside)
+        num5.addTarget(self, action: #selector(write5), for: .touchUpInside)
+        num6.addTarget(self, action: #selector(write6), for: .touchUpInside)
+        num7.addTarget(self, action: #selector(write7), for: .touchUpInside)
+        num8.addTarget(self, action: #selector(write8), for: .touchUpInside)
+        num9.addTarget(self, action: #selector(write9), for: .touchUpInside)
+ */
+        
+        
+        button.addTarget(self, action: #selector(write), for: .touchUpInside)
+        countButton.addTarget(self, action: #selector(write), for: .touchUpInside)
+        resetButton.addTarget(self, action: #selector(write), for: .touchUpInside)
+        test.addTarget(self, action: #selector(write), for: .touchUpInside)
 
 
-        button.addTarget(self, action: #selector(countAdd), for: .touchUpInside)
-        resetButton.addTarget(self, action: #selector(reset), for: .touchUpInside)
-        test.addTarget(self, action: #selector(write(_:)), for: .touchUpInside)
+        button.addTarget(self, action: #selector(write), for: .touchUpInside)
+        resetButton.addTarget(self, action: #selector(write), for: .touchUpInside)
+        test.addTarget(self, action: #selector(write), for: .touchUpInside)
         
 
         
