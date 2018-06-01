@@ -16,4 +16,25 @@ print(random(8))
 
 
 
+
+
+let sum: (Int, Int) -> Int = { (a: Int, b: Int) in return a + b }
+
+type(of: sum)
+
+let num1 : Int
+
+num1 = sum(5,5)
+
+let num2 : Int
+
+num2 = sum(10,10)
+
+func sum2(a:Int, b:Int) -> Int {
+    return a+b
+}
+let sum1: Int = sum2(a: 3, b: 3)
+
+
+
 //: [Next](@next)
