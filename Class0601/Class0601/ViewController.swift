@@ -10,8 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var label = UILabel(frame: CGRect(x: 15, y: 50 , width: 295, height: 90))
-  
+    
+//    =========================버튼 선언, 크기, 위치 설정================================
+    var label = UILabel(frame: CGRect(x: 15, y: 20 , width: 295, height: 120))
     var plus = UIButton(frame: CGRect(x: 15, y: 150, width: 70, height: 70))
     var minus = UIButton(frame: CGRect(x: 90, y: 150, width: 70, height: 70))
     var multiple = UIButton(frame: CGRect(x: 165, y: 150, width: 70, height: 70))
@@ -25,15 +26,22 @@ class ViewController: UIViewController {
     var num4 = UIButton(frame: CGRect(x: 15, y: 310, width: 70, height: 70))
     var num5 = UIButton(frame: CGRect(x: 90, y: 310, width: 70, height: 70))
     var num6 = UIButton(frame: CGRect(x: 165, y: 310, width: 70, height: 70))
+    var num66 = UIButton(frame: CGRect(x: 240, y: 310, width: 70, height: 70))
+
+    
     
     var num7 = UIButton(frame: CGRect(x: 15, y: 390, width: 70, height: 70))
     var num8 = UIButton(frame: CGRect(x: 90, y: 390, width: 70, height: 70))
     var num9 = UIButton(frame: CGRect(x: 165, y: 390, width: 70, height: 70))
+    var num666 = UIButton(frame: CGRect(x: 240, y: 390, width: 70, height: 70))
+
     
-    var button = UIButton(frame: CGRect(x: 15, y: 470, width: 70, height: 70))
-    var countButton = UIButton(frame: CGRect(x: 90, y: 470, width: 70, height: 70))
+    
+    var button = UIButton(frame: CGRect(x: 15, y: 470, width: 145, height: 70))
     var resetButton = UIButton(frame: CGRect(x: 165, y: 470, width: 70, height: 70))
     var test = UIButton(frame: CGRect(x: 240, y: 470, width: 70, height: 70))
+//    =========================버튼 선언, 크기, 위치 설정================================
+
     
     
     var arr: Array<Int> = []
@@ -42,140 +50,153 @@ class ViewController: UIViewController {
     var firstnumber = 0
     var secondnumber = 0
     var resultnumber = 0
-    
+    var count = 1
     
     
     @objc func write(number : UIButton){
         label.text = number.currentTitle
-      
         input = label.text!
-        
         for _ in input {
             total += input
         }
-        printarr()
+        print("토탈값 : \(total)")
     }
     
     //이버튼을 누르면 문자열값 total이 map을 통해서 int로바뀌고 하나의 변수에 저장되도록하는 함수
     
     @objc func mapmap(){
-    
     var arr = total.components(separatedBy: " ").map({ (value : String) -> Int in return Int(value)! })
-    
-        
         firstnumber = arr[0]
-        
-    total = ""
+        total = ""
+    print(arr)
+    print(count, "count")
     print("인트로변환된값 \(arr[0])")
-        
-    
+   
     }
     
     //이버튼을 누르면 다시 시작된 토탈이 인트형으로 변환이되서 secondnumber에 들어가고
     //firstnumber   secondnumber가 연산을 하고
     //결과값이 다시firstnumber로 바껴야해 .
     @objc func mapmap2(){
-        
         var arr = total.components(separatedBy: " ").map({ (value : String) -> Int in return Int(value)! })
-        
-        
         secondnumber = arr[0]
-        
+        print(arr)
         print("두번째변환된값 \(arr[0])")
+        count += 1
+        print(count, "count")
 
-        
         calcullater()
     }
     
     
     @objc func calcullater(){
        resultnumber = firstnumber + secondnumber
-       label.text = "결과값은 \(resultnumber)입니다."
-        firstnumber = resultnumber
-        
+       label.text = "\(resultnumber)"
+       print("결과값은 \(resultnumber)입니다.")
+       firstnumber = resultnumber
+       total = ""
+
     }
     
-    /*
-    @objc func write1(){ label.text = "\(1)"; arr.append(1); printarr()}
-    @objc func write2(){ label.text = "\(2)"; arr.append(2); printarr()}
-    @objc func write3(){ label.text = "\(3)"; arr.append(3); printarr()}
-    @objc func write4(){ label.text = "\(4)"; arr.append(4); printarr()}
-    @objc func write5(){ label.text = "\(5)"; arr.append(5); printarr()}
-    @objc func write6(){ label.text = "\(6)"; arr.append(6); printarr()}
-    @objc func write7(){ label.text = "\(7)"; arr.append(7); printarr()}
-    @objc func write8(){ label.text = "\(8)"; arr.append(8); printarr()}
-    @objc func write9(){ label.text = "\(9)"; arr.append(9); printarr()}
-    @objc func write0(){ label.text = "\(0)"; arr.append(0); printarr()}
-    */
-  
-    
+    @objc func reset(){
+        firstnumber = 0
+        secondnumber = 0
+        resultnumber = 0
+        total = ""
+        printarr()
+    }
     
     @objc func printarr(){
         print("토탈값 : \(total)")
-
+        print("첫번째값 : \(firstnumber)")
+        print("두번째값 : \(secondnumber)")
+        print("결과값 : \(resultnumber)")
     }
     
     
-    
-    
- 
-
-    override func viewDidLoad() {
+    override func viewDidLoad() { //뷰가 로드되면 행동하는 메소드
         super.viewDidLoad()
         
+        
+//    =========================버튼 이름, 모양 설정================================
+
+        plus.setTitle("AC", for: .normal)
+        plus.setTitleColor( .black, for: .normal)
+        minus.setTitle("±", for: .normal)
+        minus.setTitleColor( .black, for: .normal)
+        multiple.setTitle("%", for: .normal)
+        multiple.setTitleColor( .black, for: .normal)
+        divide.setTitle("÷", for: .normal)
+        divide.setTitleColor( .black, for: .normal)
 
         
-        plus.setTitle("+", for: .normal)
-        minus.setTitle("-", for: .normal)
-        multiple.setTitle("*", for: .normal)
-        divide.setTitle("/", for: .normal)
         
-        num1.setTitle("1", for: .normal)
-        num2.setTitle("2", for: .normal)
-        num3.setTitle("+", for: .normal)
+        
+        num1.setTitle("7", for: .normal)
+        num2.setTitle("8", for: .normal)
+        num3.setTitle("9", for: .normal)
+        num0.setTitle("×", for: .normal)
+        
+        
+        
         num4.setTitle("4", for: .normal)
         num5.setTitle("5", for: .normal)
         num6.setTitle("6", for: .normal)
-        num7.setTitle("7", for: .normal)
-        num8.setTitle("8", for: .normal)
-        num9.setTitle("9", for: .normal)
-        num0.setTitle("=", for: .normal)
+        num66.setTitle("-", for: .normal)
 
-    
-        button.setTitle("click", for: .normal)
-        countButton.setTitle("count", for: .normal)
-        resetButton.setTitle("reset", for: .normal)
-        test.setTitle("test", for: .normal)
+        
+        num7.setTitle("1", for: .normal)
+        num8.setTitle("2", for: .normal)
+        num9.setTitle("3", for: .normal)
+        num666.setTitle("+", for: .normal)
 
-        plus.layer.cornerRadius = 25
-        minus.layer.cornerRadius = 25
-        multiple.layer.cornerRadius = 25
-        divide.layer.cornerRadius = 25
-        num1.layer.cornerRadius = 25
-        num2.layer.cornerRadius = 25
-        num3.layer.cornerRadius = 25
-        num4.layer.cornerRadius = 25
-        num5.layer.cornerRadius = 25
-        num6.layer.cornerRadius = 25
-        num7.layer.cornerRadius = 25
-        num8.layer.cornerRadius = 25
-        num9.layer.cornerRadius = 25
-        num0.layer.cornerRadius = 25
-        button.layer.cornerRadius = 25
-        countButton.layer.cornerRadius = 25
-        resetButton.layer.cornerRadius = 25
-        test.layer.cornerRadius = 25
+        
+        button.setTitle("0", for: .normal)
+        resetButton.setTitle(".", for: .normal)
+        test.setTitle("=", for: .normal)
 
+        
+        plus.layer.cornerRadius = 35
+        minus.layer.cornerRadius = 35
+        multiple.layer.cornerRadius = 35
+        divide.layer.cornerRadius = 35
+        num1.layer.cornerRadius = 35
+        num2.layer.cornerRadius = 35
+        num3.layer.cornerRadius = 35
+        num4.layer.cornerRadius = 35
+        num5.layer.cornerRadius = 35
+        num6.layer.cornerRadius = 35
+        num7.layer.cornerRadius = 35
+        num8.layer.cornerRadius = 35
+        num9.layer.cornerRadius = 35
+        num0.layer.cornerRadius = 35
+        
+        num66.layer.cornerRadius = 35
+        num666.layer.cornerRadius = 35
+
+
+        button.layer.cornerRadius = 35
+        resetButton.layer.cornerRadius = 35
+        test.layer.cornerRadius = 35
+
+        
+        label.text = "0"
+        label.font = UIFont.systemFont(ofSize: 80)
+        label.textAlignment = NSTextAlignment.right
         
         
         
+        
+        label.textColor = .white
         view.backgroundColor = .black
-        label.backgroundColor = .gray
- 
-        plus.backgroundColor = .orange
-        minus.backgroundColor = .orange
-        multiple.backgroundColor = .orange
+
+        
+        
+        plus.backgroundColor = .lightGray
+        minus.backgroundColor = .lightGray
+        multiple.backgroundColor = .lightGray
         divide.backgroundColor = .orange
+        
         
         num1.backgroundColor = .darkGray
         num2.backgroundColor = .darkGray
@@ -186,12 +207,18 @@ class ViewController: UIViewController {
         num7.backgroundColor = .darkGray
         num8.backgroundColor = .darkGray
         num9.backgroundColor = .darkGray
-        num0.backgroundColor = .darkGray
+        
+        num0.backgroundColor = .orange
+        num66.backgroundColor = .orange
+        num666.backgroundColor = .orange
+        test.backgroundColor = .orange
+        
+        
+  
 
-        button.backgroundColor = .gray
-        countButton.backgroundColor = .gray
-        resetButton.backgroundColor = .gray
-        test.backgroundColor = .gray
+
+        button.backgroundColor = .darkGray
+        resetButton.backgroundColor = .darkGray
         
         
         
@@ -218,16 +245,10 @@ class ViewController: UIViewController {
         num9.addTarget(self, action: #selector(write9), for: .touchUpInside)
  */
         
+
+
+        resetButton.addTarget(self, action: #selector(reset), for: .touchUpInside)
         
-        button.addTarget(self, action: #selector(write), for: .touchUpInside)
-        countButton.addTarget(self, action: #selector(write), for: .touchUpInside)
-        resetButton.addTarget(self, action: #selector(write), for: .touchUpInside)
-        test.addTarget(self, action: #selector(write), for: .touchUpInside)
-
-
-        button.addTarget(self, action: #selector(write), for: .touchUpInside)
-        resetButton.addTarget(self, action: #selector(write), for: .touchUpInside)
-        test.addTarget(self, action: #selector(write), for: .touchUpInside)
         
 
         
@@ -250,9 +271,13 @@ class ViewController: UIViewController {
         view.addSubview(num0)
         
         view.addSubview(button)
-        view.addSubview(countButton)
         view.addSubview(resetButton)
         view.addSubview(test)
+        
+        
+        view.addSubview(num66)
+        view.addSubview(num666)
+
         
        
 
