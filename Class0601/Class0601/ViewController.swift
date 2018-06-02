@@ -111,7 +111,7 @@ class ViewController: UIViewController {
     
     
     @objc func printarr(){
-        print("토탈값: \(total)")
+        print("토탈값 : \(total)")
 
     }
     
