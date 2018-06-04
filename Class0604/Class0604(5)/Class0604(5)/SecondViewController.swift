@@ -23,7 +23,7 @@ class SecondViewController: UIViewController {
     
     @objc func returnToViewController(){
         let View = (presentingViewController as! ViewController)
-        View.view.backgroundColor = UIColor.white
+        View.view.backgroundColor = UIColor.white    
         View.count += 1
         print("View.count : \(View.count)")
         View.label.text = "\(View.count)"
