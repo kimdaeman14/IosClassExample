@@ -14,14 +14,14 @@ class ViewController: UIViewController {
 
     var label = UILabel(frame: CGRect(x: 100, y: 100, width: 100, height: 50))
     var button = UIButton(frame: CGRect(x: 100, y: 200, width: 100, height: 50))
-
+    var count = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.green
         view.addSubview(label)
-        label.text = "0"
         label.textAlignment = NSTextAlignment.center
+        label.text = "\(count)"
         view.addSubview(button)
         button.backgroundColor = .black
         button.setTitle("click", for: .normal)
@@ -32,8 +32,7 @@ class ViewController: UIViewController {
         let SecondView = SecondViewController()
         present(SecondView, animated: true)
         print("will SecondViewController")
-        label.text = ""
-        SecondView.newlabel.text = "add count!!"
+        SecondView.changeButton.setTitle("add count!!", for: .normal)
         SecondView.view.backgroundColor = UIColor.lightGray
     }
     
