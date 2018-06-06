@@ -24,7 +24,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <state key="normal" title="next 2"/>
                                 <connections>
-                                    <segue destination="O9o-T2-HGm" kind="presentation" id="G7g-D0-ohB"/>
+                                    <segue destination="O9o-T2-HGm" kind="presentation" modalTransitionStyle="flipHorizontal" id="G7g-D0-ohB"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -50,7 +50,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <state key="normal" title="next 3"/>
                                 <connections>
-                                    <segue destination="7IA-fI-vSt" kind="presentation" id="HvQ-DT-yjK"/>
+                                    <segue destination="7IA-fI-vSt" kind="presentation" modalTransitionStyle="crossDissolve" id="HvQ-DT-yjK"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7a2-S3-Xrs">
@@ -85,7 +85,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <state key="normal" title="back 2"/>
                                 <connections>
-                                    <segue destination="O9o-T2-HGm" kind="presentation" id="zWO-DA-fw5"/>
+                                    <segue destination="O9o-T2-HGm" kind="presentation" modalTransitionStyle="partialCurl" id="zWO-DA-fw5"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -99,7 +99,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="HvQ-DT-yjK"/>
-        <segue reference="zWO-DA-fw5"/>
+        <segue reference="G7g-D0-ohB"/>
     </inferredMetricsTieBreakers>
 </document>

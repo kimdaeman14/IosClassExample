@@ -1,3 +1,4 @@
+
 //
 //  ViewController.swift
 //  Class0604(5)
@@ -11,7 +12,7 @@ import UIKit
 
 
 class ViewController: UIViewController {
-
+    
     var label = UILabel(frame: CGRect(x: 100, y: 100, width: 100, height: 50))
     var button = UIButton(frame: CGRect(x: 100, y: 200, width: 100, height: 50))
     var count = 0
@@ -21,12 +22,13 @@ class ViewController: UIViewController {
         view.backgroundColor = UIColor.green
         view.addSubview(label)
         label.textAlignment = NSTextAlignment.center
-        label.text = "\(count)"
+        label.text = "0"
         view.addSubview(button)
         button.backgroundColor = .black
         button.setTitle("click", for: .normal)
         button.addTarget(self, action: #selector(toSecondViewController), for: .touchUpInside)
     }
+    
 
     @objc func toSecondViewController(){
         let SecondView = SecondViewController()
@@ -36,6 +38,6 @@ class ViewController: UIViewController {
         SecondView.view.backgroundColor = UIColor.lightGray
     }
     
-
+    
 }
 

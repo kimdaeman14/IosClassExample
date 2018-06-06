@@ -35,7 +35,6 @@ class ThirdViewController: UIViewController {
 //        따라서 정석적이며, swift에서 권장되는 표현은 dismiss(animated: true)가 아니라
 //        presentingViewController?.dismiss(animated: true)
 //        라고 볼 수 있다. 디이닛을 찍어보면 잘 닫힌다.
-        
 //        그리고 한방에 첫번째로 가고 싶다면 이런식으로 응용할 수 있겠다.
         presentingViewController?.presentingViewController?.dismiss(animated: true)
 //        그러면 이것을 활용해서 데이터도 왔다갔다 할 수 있지 않을까? 다음 프로젝트를 통해 확인해보자.
