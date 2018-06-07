@@ -1,15 +1,8 @@
 
-//
-//  ViewController.swift
-//  Class0604(5)
-//
-//  Created by kimdaeman14 on 2018. 6. 4..
-//  Copyright © 2018년 kimdaeman14. All rights reserved.
-//
+
+//0604 userDefaults 방법을 이용해서 재구성하기
 
 import UIKit
-
-
 
 class ViewController: UIViewController {
     

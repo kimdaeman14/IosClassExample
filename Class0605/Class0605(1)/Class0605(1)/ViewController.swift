@@ -1,12 +1,10 @@
-//
-//  ViewController.swift
-//  Class0605(1)
-//
-//  Created by kimdaeman14 on 2018. 6. 5..
-//  Copyright © 2018년 kimdaeman14. All rights reserved.
-//
+
 
 import UIKit
+
+
+//요구사항
+//0604일에 만들었던 버튼을 누르면 세컨드뷰컨트롤러에서 카운트값이 올라갔던 과제를 싱글톤을 이용하여 다시 만들어보기
 
 final class Count{
     static let shared = Count()

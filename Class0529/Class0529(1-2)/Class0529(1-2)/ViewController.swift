@@ -24,6 +24,7 @@ class ViewController: UIViewController {
     @objc func plusMinusCGRect(frame : CGRect)->CGRect{
         return CGRect(x: frame.minX + 30, y: frame.minY + 30, width: frame.width - 60, height: frame.height - 60)
     }
+
     @objc func colorCGRect(frameValue : CGRect, color : UIColor) -> UIView{
         let view = UIView(frame: frameValue)
         view.backgroundColor = color

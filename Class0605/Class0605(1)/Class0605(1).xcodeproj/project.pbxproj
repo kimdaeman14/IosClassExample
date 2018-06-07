@@ -12,6 +12,7 @@
 		A70E600220C6159C00C8541B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A70E600020C6159C00C8541B /* Main.storyboard */; };
 		A70E600420C6159E00C8541B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A70E600320C6159E00C8541B /* Assets.xcassets */; };
 		A70E600720C6159E00C8541B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A70E600520C6159E00C8541B /* LaunchScreen.storyboard */; };
+		A79985D120C88C7F00328E0A /* BasicConcept.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79985D020C88C7F00328E0A /* BasicConcept.swift */; };
 		A79B11CD20C667B400595AD3 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79B11CC20C667B400595AD3 /* SecondViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,7 @@
 		A70E600320C6159E00C8541B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A70E600620C6159E00C8541B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A70E600820C6159E00C8541B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A79985D020C88C7F00328E0A /* BasicConcept.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicConcept.swift; sourceTree = "<group>"; };
 		A79B11CC20C667B400595AD3 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,6 +58,7 @@
 		A70E5FFB20C6159C00C8541B /* Class0605(1) */ = {
 			isa = PBXGroup;
 			children = (
+				A79985D020C88C7F00328E0A /* BasicConcept.swift */,
 				A70E5FFC20C6159C00C8541B /* AppDelegate.swift */,
 				A70E5FFE20C6159C00C8541B /* ViewController.swift */,
 				A79B11CC20C667B400595AD3 /* SecondViewController.swift */,
@@ -141,6 +144,7 @@
 				A79B11CD20C667B400595AD3 /* SecondViewController.swift in Sources */,
 				A70E5FFF20C6159C00C8541B /* ViewController.swift in Sources */,
 				A70E5FFD20C6159C00C8541B /* AppDelegate.swift in Sources */,
+				A79985D120C88C7F00328E0A /* BasicConcept.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
