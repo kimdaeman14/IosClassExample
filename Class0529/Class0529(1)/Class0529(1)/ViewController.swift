@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         view.addSubview(greenView)
 //        view 전체 색 투명도 키워드 alpha
 //        blueView.alpha = 0.5
-//        redView.alpha = 0.5
+        redView.alpha = 0.5
 //        greenView.alpha = 0.5
     }
     @objc func perfectFrame(frame: CGRect) -> UIView{
